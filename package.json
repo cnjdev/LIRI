@@ -1,0 +1,25 @@
+{
+  "name": "liri",
+  "version": "1.0.0",
+  "description": "LIRI application",
+  "main": "liri.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cnjdev/LIRI.git"
+  },
+  "author": "cnjdev@github",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cnjdev/LIRI/issues"
+  },
+  "homepage": "https://github.com/cnjdev/LIRI#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "node-spotify-api": "^1.0.7",
+    "request": "^2.83.0",
+    "twitter": "^1.7.1"
+  }
+}
