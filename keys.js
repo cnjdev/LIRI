@@ -2,14 +2,14 @@ console.log('this is loaded');
 
 var twitterKeys = {
   consumer_key: 'eWPfC5lqBY3A4QoNzK3WlcRoM',
-  consumer_secret: '4TE23JJ3bwvOCbBwbNz0mQaoregJlw2c8GhnvZQbjFlIpSoyk1a',
+  consumer_secret: '4TE23JJ3bwOCbBwbNz0mQaoregJlw2c8GhnvZQbjFlIpSoyk1a',
   access_token_key: '1391214062-3JzAFDMLir6f1UT9vLKSixT13c3jdpL19RwujDg',
   access_token_secret: 'v5nqaOZwPc5M324qfeGa7teSuElTr8nVDkFKQrdn98Igh'
 };
 
 var spotifyKeys = {
-	client_id: '74c37d2cac5c405f91e10a68740f787b',
-	client_secret: '6cba3ffd937f4b3c9dd66ba42aabf783'
+	id: '74c37d2cac5c405f91e10a68740f787b',
+	secret: '6cba3ffd937f4b3c9dd66ba42aabf783'
 };
 
 var omdbApiKeys = {
