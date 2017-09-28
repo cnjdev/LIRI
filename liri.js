@@ -1,5 +1,6 @@
 // required files
 var apiKeys = require('./keys.js');
+var aliases = require('./aliases.js');
 var logging = require('./logs/log.js');
 var inquire = require('inquirer');
 var LIRI_Twitter = require('./modules/twitter.js');
@@ -23,8 +24,18 @@ var operations = {
 var liriMacros = new LIRI_Macros(operations);
 operations["do-what-it-says"] = liriMacros.runMacro;
 
+var aliasMap = {
+	"my-tweets": ["get-tweets", "twitter"],
+	"spotify-this-song": ["song-info", "song-this", "spotify"],
+	"movie-this": ["movie-info", "omdbapi"],
+	"do-what-it-says": ["run-macro", "run-file"]
+};
+var liriAliases = new aliases(aliasMap);
+
 function run(command, params){
-	if (operations[command] != null){
+	command = liriAliases.resolve(command);
+
+	if (command != null && operations[command] != null){
 		logging.log("Running Command: " + command + " with Params: " + params);
 		operations[command](params);
 	}

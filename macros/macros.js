@@ -9,7 +9,7 @@ function LIRI_Macros(macroOps){
 	this.runMacro = function(params){
 		// find macro file in macros directory (default random.txt)
 		var macroFile = "random.txt";
-		if (params.length > 0)
+		if (params.length > 0 && params[0].trim().length > 0)
 			macroFile = params[0];
 
 		var macroPath = "macros/" + macroFile;
