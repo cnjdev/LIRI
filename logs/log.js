@@ -10,6 +10,13 @@ function log(text){
 	});
 }
 
+function logLines(lines){
+	lines.forEach(line){
+		this.log(line);
+	}
+}
+
 module.exports = {
-	log: log
+	log: log,
+	logLines: logLines
 };

@@ -22,20 +22,23 @@ function LIRI_Spotify(keys){
 			  }
 			  else {
 			  	// get first track of results
-			  	var track = data.tracks.items[0];
+			  	data.tracks.items.forEach(function(track){
+			  		// var track = data.tracks.items[0];
 
-			  	// collect artists of track
-			  	var artists = [];
-			  	track.artists.forEach(function(artist){
-			  		artists.push(artist.name);
-			  	});
+				  	// collect artists of track
+				  	var artists = [];
+				  	track.artists.forEach(function(artist){
+				  		artists.push(artist.name);
+				  	});
 
-			  	// log track information
-			  	logging.log("********************");
-			  	logging.log("Title: " + track.name);
-			  	logging.log("Album: " + track.album.name);
-			  	logging.log("Artist(s): " + artists.join(", "));
-			  	logging.log("Preview URL: " + track.preview_url);     
+				  	// log track information
+				  	logging.log("********************");
+				  	logging.log("Title: " + track.name);
+				  	logging.log("Album: " + track.album.name);
+				  	logging.log("Artist(s): " + artists.join(", "));
+				  	logging.log("Preview URL: " + track.preview_url);  
+
+			  	});  
 			  }
 			}
 		);

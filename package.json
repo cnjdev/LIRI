@@ -18,9 +18,11 @@
   "homepage": "https://github.com/cnjdev/LIRI#readme",
   "dependencies": {
     "fs": "0.0.1-security",
+    "geocoder": "^0.2.3",
     "inquirer": "^3.3.0",
     "node-spotify-api": "^1.0.7",
     "request": "^2.83.0",
-    "twitter": "^1.7.1"
+    "twitter": "^1.7.1",
+    "weather-js": "^2.0.0"
   }
 }

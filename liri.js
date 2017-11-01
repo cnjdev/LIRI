@@ -6,18 +6,24 @@ var inquire = require('inquirer');
 var LIRI_Twitter = require('./modules/twitter.js');
 var LIRI_Spotify = require('./modules/spotify.js');
 var LIRI_OMDBAPI = require('./modules/omdbapi.js');
+var LIRI_Geocode = require('./modules/geocode.js');
+var LIRI_Weather = require('./modules/weather.js');
 var LIRI_Macros = require('./macros/macros.js');
 
 // initialized components
 var liriTwitter = new LIRI_Twitter(apiKeys.twitter);
 var liriSpotify = new LIRI_Spotify(apiKeys.spotify);
 var liriOMDBAPI = new LIRI_OMDBAPI(apiKeys.omdbapi);
+var liriGeocode = new LIRI_Geocode();
+var liriWeather = new LIRI_Weather();
 
 // LIRI Operations
 var operations = {
 	"my-tweets": liriTwitter.getLastTweets,
 	"spotify-this-song": liriSpotify.getSongInfo,
-	"movie-this": liriOMDBAPI.getMovieInfo
+	"movie-this": liriOMDBAPI.getMovieInfo,
+	"geocode-this": liriGeocode.getGeocodeInfo,
+	"weather-info": liriWeather.getWeatherInfo
 };
 
 // Macro setup
@@ -28,6 +34,8 @@ var aliasMap = {
 	"my-tweets": ["get-tweets", "twitter"],
 	"spotify-this-song": ["song-info", "song-this", "spotify"],
 	"movie-this": ["movie-info", "omdbapi"],
+	"geocode-this": ["geocode", "location-info"],
+	"weather-info": ["weather", "get-weather"],
 	"do-what-it-says": ["run-macro", "run-file"]
 };
 var liriAliases = new aliases(aliasMap);
