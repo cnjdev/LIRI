@@ -1,8 +1,9 @@
 // required files
+var inquire = require('inquirer');
+
 var apiKeys = require('./keys.js');
 var aliases = require('./aliases.js');
 var logging = require('./logs/log.js');
-var inquire = require('inquirer');
 var LIRI_Twitter = require('./modules/twitter.js');
 var LIRI_Spotify = require('./modules/spotify.js');
 var LIRI_OMDBAPI = require('./modules/omdbapi.js');
@@ -32,7 +33,7 @@ operations["do-what-it-says"] = liriMacros.runMacro;
 
 var aliasMap = {
 	"my-tweets": ["get-tweets", "twitter"],
-	"spotify-this-song": ["song-info", "song-this", "spotify"],
+	"spotify-this-song": ["song-info", "spotify"],
 	"movie-this": ["movie-info", "omdbapi"],
 	"geocode-this": ["geocode", "location-info"],
 	"weather-info": ["weather", "get-weather"],

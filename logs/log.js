@@ -11,9 +11,9 @@ function log(text){
 }
 
 function logLines(lines){
-	lines.forEach(line){
+	lines.forEach(line => {
 		this.log(line);
-	}
+	});
 }
 
 module.exports = {
