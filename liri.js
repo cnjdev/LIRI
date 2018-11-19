@@ -9,6 +9,7 @@ var LIRI_Spotify = require('./modules/spotify.js');
 var LIRI_OMDBAPI = require('./modules/omdbapi.js');
 var LIRI_Geocode = require('./modules/geocode.js');
 var LIRI_Weather = require('./modules/weather.js');
+var LIRI_GoogleBooks = require('./modules/googlebooks.js');
 var LIRI_Macros = require('./macros/macros.js');
 
 // initialized components
@@ -17,6 +18,7 @@ var liriSpotify = new LIRI_Spotify(apiKeys.spotify);
 var liriOMDBAPI = new LIRI_OMDBAPI(apiKeys.omdbapi);
 var liriGeocode = new LIRI_Geocode();
 var liriWeather = new LIRI_Weather();
+var liriGoogleBooks = new LIRI_GoogleBooks();
 
 // LIRI Operations
 var operations = {
@@ -24,7 +26,8 @@ var operations = {
 	"spotify-this-song": liriSpotify.getSongInfo,
 	"movie-this": liriOMDBAPI.getMovieInfo,
 	"geocode-this": liriGeocode.getGeocodeInfo,
-	"weather-info": liriWeather.getWeatherInfo
+	"weather-info": liriWeather.getWeatherInfo,
+	"google-books": liriGoogleBooks.getBookInfo
 };
 
 // Macro setup
@@ -37,6 +40,7 @@ var aliasMap = {
 	"movie-this": ["movie-info", "omdbapi"],
 	"geocode-this": ["geocode", "location-info"],
 	"weather-info": ["weather", "get-weather"],
+	"google-books": ["book-info", "book-search"],
 	"do-what-it-says": ["run-macro", "run-file"]
 };
 var liriAliases = new aliases(aliasMap);
