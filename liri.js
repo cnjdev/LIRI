@@ -49,7 +49,7 @@ function run(command, params){
 	command = liriAliases.resolve(command);
 
 	if (command != null && operations[command] != null){
-		logging.log("Running Command: " + command + " with Params: " + params);
+		//logging.log("Running Command: " + command + " with Params: " + params);
 		operations[command](params);
 	}
 }
