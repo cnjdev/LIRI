@@ -4,15 +4,12 @@ var inquire = require('inquirer');
 var apiKeys = require('./keys.js');
 var aliases = require('./aliases.js');
 var logging = require('./logs/log.js');
-
 var LIRI_Twitter = require('./modules/twitter.js');
 var LIRI_Spotify = require('./modules/spotify.js');
 var LIRI_OMDBAPI = require('./modules/omdbapi.js');
 var LIRI_Geocode = require('./modules/geocode.js');
 var LIRI_Weather = require('./modules/weather.js');
 var LIRI_GoogleBooks = require('./modules/googlebooks.js');
-var LIRI_GiantBomb = require('./modules/giantbomb.js');
-
 var LIRI_Macros = require('./macros/macros.js');
 
 // initialized components
@@ -22,7 +19,6 @@ var liriOMDBAPI = new LIRI_OMDBAPI(apiKeys.omdbapi);
 var liriGeocode = new LIRI_Geocode();
 var liriWeather = new LIRI_Weather();
 var liriGoogleBooks = new LIRI_GoogleBooks();
-var liriGiantBomb = new LIRI_GiantBomb(apiKeys.giantbomb);
 
 // LIRI Operations
 var operations = {
@@ -31,8 +27,7 @@ var operations = {
 	"movie-this": liriOMDBAPI.getMovieInfo,
 	"geocode-this": liriGeocode.getGeocodeInfo,
 	"weather-info": liriWeather.getWeatherInfo,
-	"google-books": liriGoogleBooks.getBookInfo,
-	"giant-bomb": liriGiantBomb.getGameInfo
+	"google-books": liriGoogleBooks.getBookInfo
 };
 
 // Macro setup
@@ -46,12 +41,11 @@ var aliasMap = {
 	"geocode-this": ["geocode", "location-info"],
 	"weather-info": ["weather", "get-weather"],
 	"google-books": ["book-info", "book-search"],
-	"giant-bomb": ["game-info", "game-search"],
 	"do-what-it-says": ["run-macro", "run-file"]
 };
 var liriAliases = new aliases(aliasMap);
 
-function runOperation(command, params){
+function run(command, params){
 	command = liriAliases.resolve(command);
 
 	if (command != null && operations[command] != null){
@@ -76,15 +70,14 @@ if (process.argv.length < 3){
       name: "param"
     }
   ])
-  .then(response => {
-  	var command = response.commands;
-  	var params = [ response.param ];
-  	runOperation(command, params);
+  .then(function(response) {
+  	console.log(response);
+  	run(response.command, [response.param]);
   });
 }
 else {
 	// figure out what to do next
 	var command = process.argv[2].toLowerCase();
 	var params = process.argv.slice(3);
-	runOperation(command, params);
+	run(command, params);
 }
