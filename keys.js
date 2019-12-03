@@ -17,8 +17,14 @@ var omdbApiKeys = {
 	app_key: 'ad937c9a'
 };
 
+var giantBombKeys = {
+	api_key: '6009cad7e30be9d76c13cd1e71df331da5e16427',
+	user_agent: 'LIRI_Giant_Bomb_Module'
+};
+
 module.exports = {
 	twitter: twitterKeys,
 	spotify: spotifyKeys,
-	omdbapi: omdbApiKeys
+	omdbapi: omdbApiKeys,
+	giantbomb: giantBombKeys
 };
