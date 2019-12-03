@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LIRI</title>
+
+  <!-- LIRI bundle with Browserify -->
+  <script src="bundle.js"></script>
+</head>
+<body>
+	<script>
+		getBookInfo("Kidnapped", function(result){
+			console.log(result);
+		});
+
+		getGameInfo("Psychonauts", function(result){
+			console.log(result);
+		});
+
+		getMovieInfo("Sharknado", function(result){
+			console.log(result);
+		});
+
+		getSongInfo("Connection", function(result){
+			console.log(result);
+		});
+	</script>
+</body>
+</html>

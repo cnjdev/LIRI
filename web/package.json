@@ -1,0 +1,17 @@
+{
+  "name": "liriweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "liriForWeb.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "giant-bomb": "^2.0.1",
+    "google-books-search": "^0.3.1",
+    "node-spotify-api": "^1.1.1",
+    "request": "^2.88.0"
+  }
+}
