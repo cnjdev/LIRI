@@ -12,6 +12,7 @@ var LIRI_Geocode = require('./modules/geocode.js');
 var LIRI_Weather = require('./modules/weather.js');
 var LIRI_GoogleBooks = require('./modules/googlebooks.js');
 var LIRI_GiantBomb = require('./modules/giantbomb.js');
+var LIRI_BreedInfo = require('./modules/breedinfo.js');
 
 var LIRI_Macros = require('./macros/macros.js');
 
@@ -23,6 +24,7 @@ var liriGeocode = new LIRI_Geocode();
 var liriWeather = new LIRI_Weather();
 var liriGoogleBooks = new LIRI_GoogleBooks();
 var liriGiantBomb = new LIRI_GiantBomb(apiKeys.giantbomb);
+var liriBreedInfo = new LIRI_BreedInfo();
 
 // LIRI Operations
 var operations = {
@@ -32,7 +34,8 @@ var operations = {
 	"geocode-this": liriGeocode.getGeocodeInfo,
 	"weather-info": liriWeather.getWeatherInfo,
 	"google-books": liriGoogleBooks.getBookInfo,
-	"giant-bomb": liriGiantBomb.getGameInfo
+	"giant-bomb": liriGiantBomb.getGameInfo,
+	"breed-info": liriBreedInfo.getBreedInfo
 };
 
 // Macro setup
@@ -47,6 +50,7 @@ var aliasMap = {
 	"weather-info": ["weather", "get-weather"],
 	"google-books": ["book-info", "book-search"],
 	"giant-bomb": ["game-info", "game-search"],
+	"breed-info": ["cat-info", "breed-search"],
 	"do-what-it-says": ["run-macro", "run-file"]
 };
 var liriAliases = new aliases(aliasMap);
