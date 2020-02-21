@@ -7,6 +7,9 @@ LIRI is a _Language_ Interpretation and Recognition Interface program which runs
 * OMDB API (movie information)
 * Weather (weather for location)
 * Geocode (geographic information)
+* Google Books (book information)
+* Giant Bomb (video game information)
+* Breed Info (information on cat breeds)
 
 The program can also run these operations through Macros defined in files.
 
@@ -102,6 +105,55 @@ Formatted Address: New Brunswick, NJ, USA
 Geographic Coordinates:
  Latitude: 40.4862157
  Longitude: -74.4518188
+```
+
+#### Google Books
+
+Book information can be retrieved for a particular book using the Google Books operation by entering this in the console:
+```
+node liri google-books "<bookName>"
+```
+(Aliases for _google-books_ are _book-info_ and _book-search_)
+
+If no book is specified, "Fahrenheit 451" is used.  When it searches the Google Books API, some results are returned, one of which looks like this:
+```
+*********************
+Title: Fahrenheit 451
+Subtitle: Ray Bradbury
+Author(s): Ray Bradbury
+URL: https://books.google.com/books/about/Fahrenheit_451.html?hl=&id=nHWeS0buvG4C
+```
+
+#### Giant Bomb
+
+Game information can be retrieved for a particular video game using the Giant Bomb operation by entering this in the console:
+```
+node liri giant-bomb "<gameName>"
+```
+(Aliases for _giant-bomb_ are _game-info_ and _game-search_)
+
+If no game is specified, "Psychonauts" is used.  When it searches the Giant Bomb API, some results are returned, one of which looks like this:
+```
+*********************
+Title: Psychonauts
+Year: null
+Platforms: Mac, PlayStation 2, Xbox, Xbox 360 Games Store, PlayStation Network (PS3), PC, PlayStation 4, Linux
+URL: https://www.giantbomb.com/psychonauts/3030-2906/
+```
+
+#### Breed Info
+
+Information can be retrieved for a particular cat breed using the Breed Info operation by entering this in the console:
+```
+node liri breed-info "<breedName>"
+```
+(Aliases for _breed-info_ are _cat-info_ and _breed-search_)
+
+If no breed is specified, "Burmese" is used.  When it searches The Cats API, some information is returned, which looks like this:
+```
+********************
+Burmese Info:
+Burmese love being with people, playing with them, and keeping them entertained. They crave close physical contact and abhor an empty lap. They will follow their humans from room to room, and sleep in bed with them, preferably under the covers, cuddled as close as possible. At play, they will turn around to see if their human is watching and being entertained by their crazy antics.
 ```
 
 #### Macros

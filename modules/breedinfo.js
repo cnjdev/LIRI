@@ -20,7 +20,7 @@ function LIRI_BreedInfo(){
                 
                 // log info for search breed
                 logging.log("********************");
-                logging.log(`\r\n${searchBreed} Info:`);
+                logging.log(`${searchBreed} Info:`);
                 logging.log(description);
             }
         );
