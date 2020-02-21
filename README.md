@@ -192,7 +192,11 @@ A menu appears with the operations defined in the application (example below):
   movie-this
   geocode-this
   weather-info
+  google-books
+  giant-bomb
+  breed-info
   do-what-it-says
+
 ```
 
 Once an operation is chosen, another prompt appears giving the user a chance to enter arguments to run for the operation. That operation is then run on the arguments entered.

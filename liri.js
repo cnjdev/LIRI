@@ -72,7 +72,8 @@ if (process.argv.length < 3){
       type: "list",
       message: "Choose an operation: ",
       choices: Object.keys(operations),
-      name: "command"
+	  name: "command",
+	  pageSize: 10
     },
     {
       type: "input",
